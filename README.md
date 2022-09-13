@@ -1,3 +1,7 @@
+## ## ## ## ## ## ## ## ## ## ## ## ## 
+I am currently still working on this React Application ; I have built it from scratch using React, Hooks , Mui....
+## ## ## ## ## ## ## ## ## ## ## ## ## 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
