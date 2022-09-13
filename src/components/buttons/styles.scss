@@ -1,0 +1,16 @@
+.filer-btn-container {
+    display: inline-block;
+    padding-right: 0px;
+    max-width: 1300px;
+
+    .filter-btn {
+        margin: 0px 5px;
+
+        span {
+            font-size: 18px;
+            text-transform: capitalize;
+            font-family: Mulish;
+        }
+    }
+
+}

@@ -1,0 +1,89 @@
+* {
+    box-sizing: border-box;
+}
+
+
+.navbar {
+    .inner {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        .logo {
+            position: relative;
+            right: 100px;
+            margin-top: 6px;
+        }
+
+        li {
+            margin-right: 100px;
+            text-decoration: none;
+            list-style: none;
+            box-sizing: border-box;
+
+            span {
+                font-family: "Karla";
+            }
+
+            &:hover {
+                // No, but you could go with something like border-bottom: 1px solid #000 and padding-bottom: 3px.
+                border-bottom: 1px solid #000;
+                padding-bottom: 3px;
+            }
+        }
+    }
+}
+
+.arrivals-container {
+    background: rgba(223, 211, 211, 0.164);
+    padding-bottom: 200px;
+}
+
+.womens-wear-container {
+
+    .collapse-wrapper {
+        &:hover {
+            background: rgba(243, 243, 243, 0.214);
+        }
+
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+
+            span.small-text {
+                font-family: Karla;
+                // border: 2px solid;
+                letter-spacing: 5px;
+            }
+
+            span.small-2 {
+                margin-left: 15px;
+            }
+
+            .filter-grp-2,
+            .filter-grp-1 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .filter-btns2 {
+                display: inline-block;
+            }
+        }
+    }
+
+
+    .search-component {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.css-1x51dt5-MuiInputBase-input-MuiInput-input {
+    height: 2.5em !important;
+}

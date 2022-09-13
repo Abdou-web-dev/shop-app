@@ -1,0 +1,45 @@
+.new-arrival-container {
+    display: inline-block;
+    margin-top: 100px;
+
+    &:hover {
+        background: url(../../assets//images/david.jpg) no-repeat left center/cover;
+    }
+
+    .box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        span {
+            font-family: "Mulish";
+            text-transform: capitalize;
+            letter-spacing: 2px;
+            font-size: 30px;
+            color: black;
+        }
+    }
+}
+
+.container-women {
+    display: inline-block;
+    margin-top: 100px;
+
+    &:hover {
+        background: url(../../assets//images/women.jpg) no-repeat left center/cover;
+    }
+
+    .box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        span {
+            font-family: "Mulish";
+            text-transform: capitalize;
+            letter-spacing: 2px;
+            font-size: 30px;
+            color: white;
+        }
+    }
+}

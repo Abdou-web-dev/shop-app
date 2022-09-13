@@ -1,0 +1,33 @@
+.search-container {
+    &:hover {
+        // width: 600px;
+        // border: 2px solid red;
+    }
+
+    .field {
+        &:focus {
+            // width: 600px;
+        }
+    }
+}
+
+.MuiTooltip-popper {}
+
+#tooltip1 {
+    .css-1k51tf5-MuiTooltip-tooltip {
+        background-color: rgba(97, 97, 97, 0.92);
+        border-radius: 4px;
+        color: white;
+        font-family: "Mulish" !important;
+        padding: 10px 40px !important;
+        font-size: 1rem !important;
+        // max-width: 300px;
+        margin: 0;
+        margin-top: 5px;
+        word-wrap: break-word;
+        font-weight: 500;
+        margin-left: 5px !important;
+        letter-spacing: 5px !important;
+        line-height: 25px;
+    }
+}

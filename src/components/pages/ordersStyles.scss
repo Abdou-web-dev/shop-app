@@ -1,0 +1,130 @@
+.orders-clothes-list-container {
+  // background: rgba(125, 146, 125, 0.555);
+  padding: 100px 20px;
+  min-height: 3000px;
+  .text-wrapper {
+    span {
+      font-family: Mulish;
+      font-size: 18px;
+      font-size: initial;
+      letter-spacing: 2.5px;
+    }
+  }
+  .orders-clothes-list {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 50px;
+    background: rgba(179, 173, 173, 0.333);
+
+    &:hover {
+      background: rgba(179, 173, 173, 0.22);
+    }
+
+    .clothes-names-grp1,
+    .clothes-names-grp2,
+    .clothes-names-grp3 {
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 80px 0px;
+      flex-basis: 33%;
+
+      &:hover {
+        border: 0.5px solid gray;
+      }
+
+      p {
+        font-family: "Roboto";
+        font-size: 18px;
+        font-size: initial;
+        letter-spacing: 1.5px;
+
+        &:hover {
+          color: white;
+        }
+      }
+    }
+
+    .divider {
+      margin: 50px 80px;
+      -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+      flex-shrink: 0;
+      border-width: 0.2px;
+      border-style: solid;
+      border-color: lightgray;
+      border-bottom-width: 0;
+      height: 100%;
+      border-right-width: thin;
+      height: 500px;
+    }
+  }
+  .seen {
+    margin: 2000px 50px;
+    // margin-bottom: 0px;
+    border: 2px solid red;
+  }
+}
+
+.popover-content {
+  position: relative;
+  // border: 2px solid red;
+  .popover_wrapper {
+    .popover_img {
+      width: 450px;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+  .icon_btn {
+    position: absolute;
+    top: 90%;
+    left: 84%;
+    .arrow_icon {
+    }
+  }
+}
+
+.modal-inner {
+  .modal-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .modal-image-wrapper {
+      border: 2px solid lightgray;
+      margin-top: 2%;
+      padding: 80px 50px;
+      position: relative;
+
+      img.modal_image {
+        width: 450px;
+        height: auto;
+        object-fit: contain;
+        &:hover {
+          opacity: 0.95;
+        }
+      }
+      //close icon
+      & > *:nth-child(2) {
+        position: absolute;
+        top: 1%;
+        right: 1%;
+      }
+      //arrow icon
+      & > *:nth-child(3) {
+        position: absolute;
+        top: 90%;
+        right: 43%;
+        // border: 2.5px solid black;
+        margin-top: 2px;
+      }
+    }
+  }
+}
+
+.border {
+  border: 1px solid black;
+}

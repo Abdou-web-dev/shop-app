@@ -1,0 +1,269 @@
+* {
+    box-sizing: border-box;
+}
+
+.arrival-women-container {
+    margin-top: 150px;
+
+    .arrival-inner {
+
+        .women-item {
+            height: 600px;
+
+            .odd-infos {
+                display: inline-block;
+                position: relative;
+                bottom: 140px;
+                width: 800px;
+                padding-bottom: 100px;
+                background: url("../../assets//images/clothes.PNG") no-repeat center center/cover;
+                padding-left: 80px;
+                padding-top: 80px;
+
+                div {
+                    margin-bottom: 20px;
+                }
+
+                span.name {
+                    font-family: Mulish;
+                    display: block;
+                    margin-bottom: 20px;
+                    font-weight: bold;
+                    font-size: 26px;
+                }
+
+                div.div1 {
+                    display: flex;
+                    align-items: center;
+                    // border: 2px solid;
+
+                    span.fit-word {
+                        font-weight: bolder;
+                        font-style: italic;
+                    }
+
+                    span.fit {
+                        font-family: Karla;
+                        display: block;
+                    }
+                }
+
+                div.div2 {
+                    display: flex;
+                    align-items: center;
+
+                    span.price-word {
+                        font-weight: 600;
+                        letter-spacing: 2px;
+                        font-style: italic;
+                        color: gray;
+                    }
+
+                    span.price {
+                        font-family: Montserrat;
+                        display: block;
+
+                    }
+                }
+
+                div.div3 {
+                    display: flex;
+                    align-items: center;
+
+                    span.color-word {
+                        font-weight: 600;
+                        letter-spacing: 2px;
+                        font-style: italic;
+                        color: gray;
+                    }
+
+                    span.color-pattern {
+                        font-family: Roboto;
+                    }
+                }
+
+                div.div4 {
+                    display: flex;
+                    align-items: center;
+
+                    span.available-word {
+                        font-weight: 600;
+                        letter-spacing: 2px;
+                        font-style: italic;
+                        color: gray;
+
+                    }
+
+                    span.instock {
+                        font-family: Quicksand;
+
+
+                    }
+                }
+
+                div.div5 {
+                    display: flex;
+                    align-items: center;
+
+                    span.composition-word {
+                        font-weight: 600;
+                        letter-spacing: 2px;
+                        font-style: italic;
+                        color: gray;
+                    }
+
+                    span.composition {
+                        font-family: "Work Sans";
+                    }
+                }
+
+                span.release-year {
+                    font-family: Mulish;
+
+                }
+
+            }
+
+            img.image {
+                width: 500px;
+                height: 500px;
+                object-fit: contain;
+                position: relative;
+                top: 0px;
+
+                &:hover {
+                    transform: scale(1.2);
+                }
+            }
+
+            hr.divider {
+                width: 1000px;
+                margin: 0 auto;
+                margin-top: -100px;
+                margin-bottom: 40px;
+                border: 1.2px solid rgb(207, 190, 190);
+            }
+
+        }
+    }
+}
+
+.infos {
+    display: inline-block;
+    position: relative;
+    bottom: 140px;
+    width: 800px;
+    padding-bottom: 100px;
+    background: rgba(255, 192, 203, 0.185);
+    padding-left: 80px;
+    padding-top: 80px;
+
+    div {
+        margin-bottom: 20px;
+    }
+
+    span.name {
+        font-family: Mulish;
+        display: block;
+        margin-bottom: 20px;
+        font-weight: bold;
+        font-size: 26px;
+    }
+
+    div.div1 {
+        display: flex;
+        align-items: center;
+
+        span.fit-word {
+            font-weight: bolder;
+            font-style: italic;
+        }
+
+        span.fit {
+            font-family: Karla;
+            display: block;
+        }
+    }
+
+    div.div2 {
+        display: flex;
+        align-items: center;
+
+        span.price-word {
+            font-weight: 600;
+            letter-spacing: 2px;
+            font-style: italic;
+            color: gray;
+        }
+
+        span.price {
+            font-family: Montserrat;
+            display: block;
+            // border: 2px solid;
+        }
+    }
+
+    div.div3 {
+        display: flex;
+        align-items: center;
+
+        span.color-word {
+            font-weight: 600;
+            letter-spacing: 2px;
+            font-style: italic;
+            color: gray;
+        }
+
+        span.color-pattern {
+            font-family: Roboto;
+        }
+    }
+
+    div.div4 {
+        display: flex;
+        align-items: center;
+
+        span.available-word {
+            font-weight: 600;
+            letter-spacing: 2px;
+            font-style: italic;
+            color: gray;
+        }
+
+        span.instock {
+            font-family: Quicksand;
+        }
+    }
+
+    div.div5 {
+        display: flex;
+        align-items: center;
+
+        span.composition-word {
+            font-weight: 600;
+            letter-spacing: 2px;
+            font-style: italic;
+            color: gray;
+        }
+
+        span.composition {
+            font-family: "Work Sans";
+        }
+    }
+
+    span.release-year {
+        font-family: Mulish;
+
+    }
+
+}
+
+.asterik {
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.position-no {
+    position: relative;
+    bottom: 5px;
+}
