@@ -4,19 +4,10 @@ import WomensClothesListFiltered from "../components/clothes/WomensClothesListFi
 import Buttons from "./buttons/FilterButtons.js";
 import IconColorButtons from "./buttons/IconColorButtons.js";
 import SearchComponent from "./inputs/SearchComponent.js";
-import FilterListIcon from "@mui/icons-material/FilterList";
 import "./styles.scss";
-import {
-  Autocomplete,
-  Collapse,
-  IconButton,
-  Tooltip,
-  TextField,
-} from "@mui/material";
-import SimpleCollapse from "./collapse/Collapse.js";
-// import { ReactSearchAutocomplete } from "react-search-autocomplete";
+import { Collapse, IconButton, Tooltip, Modal } from "@mui/material";
 import { getAllClothes } from "../services/dataFetcher";
-// export const Context = React.createContext('hhhs');
+import { WomenWearModal } from "./modals/WomenWearModal.jsx";
 
 const clothes2 = [
   { name: "The Shawshank Redemption", year: 1994 },
@@ -43,7 +34,6 @@ const clothes2 = [
 ];
 
 const Womenswear = (props) => {
-  //const state = useContext(ThemeContext)
   const [clothes, setClothes] = React.useState("");
   //at first render of the page, fetch the data and then show the clothes
   React.useEffect(() => {
@@ -52,9 +42,15 @@ const Womenswear = (props) => {
         setClothes(data);
       })
       .catch((error) => console.error(`Error:${error}`)); //if any error occured during the process, handle it here
+    setopenModal(true);
+    //close the modal 5 seconds later
+    setTimeout(() => {
+      setopenModal(false);
+    }, 5500);
   }, []);
+  const [openModal, setopenModal] = React.useState();
 
-  //code to search for a specific team name among all teams displayed in the ui
+  //code to search for a specific garment among all garments displayed in the ui
   const [filteredResults, setFilteredResults] = React.useState([]);
   const [searchInput, setSearchInput] = React.useState("");
 
@@ -84,16 +80,14 @@ const Womenswear = (props) => {
     } else {
       setFilteredResults(clothes);
     }
-    // console.log(filteredResults)
   };
 
   //code for filtering the clothes based on some criteria
-
   const availableFits = [
     ...new Set(clothes.map && clothes?.map((cloth) => cloth.fit)),
   ];
 
-  //the function that performs the filter
+  //the function that does the filter
   const filterItemByFit = (curcat) => {
     const newItems = clothes.filter((newVal) => {
       return newVal.fit === curcat;
@@ -132,7 +126,6 @@ const Womenswear = (props) => {
     const newItemsYear = clothes.filter((cloth) => {
       return cloth.releaseYear === curYear;
     });
-    // let itemstest = newItemsYear;
     setClothes(newItemsYear);
   };
 
@@ -141,11 +134,11 @@ const Womenswear = (props) => {
   const [expandFilterMenu, setexpandFilterMenu] = React.useState(false);
 
   const handleFilterIconClick = () => {
-    // if (show === true) setShow(false);
-    // else if (show === false) setShow(true);
-    // === setChecked((prev) => !prev);
     setexpandFilterMenu(!expandFilterMenu);
   };
+  // if (show === true) setShow(false);
+  // else if (show === false) setShow(true);
+  // === setChecked((prev) => !prev);
 
   const handleOnHover = () => {
     console.log("hovered !!");
@@ -241,15 +234,30 @@ const Womenswear = (props) => {
         </div>
       </Collapse>
 
-      <div className="search-component" style={{ marginTop: "50px" }}>
-        {showSearchInput && <SearchComponent searchItems={searchItems} />}
-        {/* passing searchItems function as props to SearchComponent Child*/}
-      </div>
-      {searchInput.length >= 1 ? ( //if something is being typed in the search input field
-        <WomensClothesListFiltered filteredResults={filteredResults} />
-      ) : (
-        <WomensClothesList noSearchInput={!showSearchInput} clothes={clothes} />
-      )}
+      <>
+        <div className="search-component" style={{ marginTop: "50px" }}>
+          {showSearchInput && <SearchComponent searchItems={searchItems} />}
+          {/* passing searchItems function as props to SearchComponent Child*/}
+        </div>
+        {searchInput.length >= 1 ? ( // === if something is being typed in the search input field
+          <WomensClothesListFiltered filteredResults={filteredResults} />
+        ) : (
+          <WomensClothesList
+            noSearchInput={!showSearchInput}
+            clothes={clothes}
+          />
+        )}
+      </>
+
+      <Modal
+        disableRestoreFocus
+        open={openModal}
+        onClose={() => setopenModal(false)}
+      >
+        <div>
+          <WomenWearModal handleCloseModal={() => setopenModal(false)} />
+        </div>
+      </Modal>
     </div>
   );
 };

@@ -9,14 +9,14 @@ import "./styles.scss";
 export const Context = React.createContext("");
 
 //child component
-const WomensClothesList = (props) => {
+const WomensClothesList = ({ clothes, noSearchInput }) => {
+  // here, we are accepting the data 'clothes' coming from the parent component 'Womenswear' as props,
+  // const { clothes, noSearchInput } = props;
   //hopefully, container1 and container2 will sit next to each other
   let gradient1 = "linear-gradient(to right, #00416a, #e4e5e6)";
 
-  const displayClothes = (props) => {
-    // here, we are accepting the data 'clothes' coming from the parent component 'Womenswear' as props,
-    const { clothes, noSearchInput } = props;
-    const handleImgClick = () => {};
+  const displayClothes = () => {
+    // const handleImgClick = () => {};
 
     if (clothes.length > 0) {
       return (
@@ -48,22 +48,24 @@ const WomensClothesList = (props) => {
                 <img
                   src={cloth.url}
                   className="image"
-                  onClick={handleImgClick}
+                  // onClick={handleImgClick}
                 />
 
                 <div
                   className="infos"
                   style={{
+                    right: noSearchInput ? "-20px" : "30px",
+                    marginBottom: "40px",
                     background:
-                      index % 2 === 0
-                        ? gradient1 //for even elements
+                      index % 2 === 0 //for even elements
+                        ? gradient1
                         : index === 7 ||
                           index === 13 ||
                           index === 19 ||
                           index === 22
-                        ? "rgba(240, 240, 240, 0.212)"
-                        : index % 2 !== 0
-                        ? "rgba(144, 144, 185, 0.5)" //for odd elements
+                        ? "rgba(240, 240, 240, 0.32)"
+                        : index % 2 !== 0 //for odd elements
+                        ? "rgba(144, 144, 185, 0.5)"
                         : "lightgray", //else
                   }}
                 >
@@ -147,26 +149,23 @@ const WomensClothesList = (props) => {
                   </Tooltip>
                 </div>
 
-                {
-                  //noSearchInput is false
-                  noSearchInput && (
-                    <div className="orders-btn-container">
-                      <Link to="/orders">
-                        <IconButton
-                          sx={{
-                            color: "brown",
-                            padding: "0px 2px",
-                            width: "60px",
-                            height: "60px",
-                          }}
-                          className="order-btn"
-                        >
-                          <Shop className="shop-icon" />
-                        </IconButton>
-                      </Link>
-                    </div>
-                  )
-                }
+                {noSearchInput === true && (
+                  <div className="orders-btn-container">
+                    <Link to="/orders">
+                      <IconButton
+                        sx={{
+                          color: "brown",
+                          padding: "0px 2px",
+                          width: "60px",
+                          height: "60px",
+                        }}
+                        className="order-btn"
+                      >
+                        <Shop className="shop-icon" />
+                      </IconButton>
+                    </Link>
+                  </div>
+                )}
               </div>
             </div>
           );
@@ -180,7 +179,7 @@ const WomensClothesList = (props) => {
   return (
     <>
       {/* here, we are calling the function that uses map JS method and that dsplay the clothes */}
-      {displayClothes(props)}
+      {displayClothes()}
     </>
   );
 };

@@ -82,6 +82,7 @@ const WomensClothesListFiltered = (props) => {
               <div
                 className="infos"
                 style={{
+                  // right: "0px",
                   marginLeft: "18px",
                   order: infosOrder,
                   background:
